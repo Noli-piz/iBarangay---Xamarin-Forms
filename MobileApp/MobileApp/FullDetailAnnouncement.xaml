@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="MobileApp.FullDetailAnnouncement">
+    <ContentPage.Content>
+
+        <StackLayout Padding="30,20,30,0">
+            <Label x:Name="lblBack"
+                   Text="BACK"
+                   TextColor="Red"
+                   Margin="0,0,0,30"/>
+
+            <Frame CornerRadius="25" 
+                           HeightRequest="120"
+                           WidthRequest="120"
+                           HorizontalOptions="Center"
+                           Padding="0"
+                           Margin="0,0,0,20"
+                           BackgroundColor="White"
+                           IsClippedToBounds="True">
+                
+                <Image x:Name="imgAlertLevel"/>
+            </Frame>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  Text="Subject: " 
+                               TextColor="Black"
+                               FontSize="16"
+                               FontFamily="Segoe UI"
+                               FontAttributes="Bold"/>
+
+
+                        <Span  x:Name="lblSubject"
+                               TextColor="Black"
+                               FontSize="15"
+                               FontFamily="Segoe UI"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  Text="Date: " 
+                               TextColor="Black"
+                               FontSize="16"
+                               FontFamily="Segoe UI"
+                               FontAttributes="Bold"/>
+
+
+                        <Span  x:Name="lblDate"
+                               TextColor="Black"
+                               FontSize="15"
+                               FontFamily="Segoe UI"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span  Text="Details: " 
+                               TextColor="Black"
+                               FontSize="16"
+                               FontFamily="Segoe UI"
+                               FontAttributes="Bold"/>
+
+
+                        <Span  x:Name="lblDetails"
+                               TextColor="Black"
+                               FontSize="15"
+                               FontFamily="Segoe UI"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

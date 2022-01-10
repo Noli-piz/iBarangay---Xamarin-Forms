@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:Xamarin.Forms.Controls;assembly=CircularProgressBar"
+             xmlns:local="clr-namespace:MobileApp.View"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="MobileApp.Login">
+
+    <Grid
+        Margin="0,20,0,0">
+
+        
+        
+        <StackLayout
+            Padding="10"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="StartAndExpand">
+
+            <Image Source="splashlogo.png" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" 
+               HeightRequest="170"
+               WidthRequest="170"/>
+
+            <Label Text="Welcome to iBarangay App"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   TextColor="DarkGray"
+                   FontSize="20"
+                   FontFamily="Segoe UI"
+                   FontAttributes="Bold"
+                   Margin="0,7,0,15"/>
+
+
+            <!-- Username Field -->
+            <Grid>
+                <Frame
+                BorderColor="{DynamicResource EntryBorderColor}"
+                CornerRadius="20"
+                HasShadow="False"
+                BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                    x:Name="lblUsername"
+                    AnchorY="2"
+                    AnchorX=".5"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    HorizontalOptions="Start"
+                    Text="Username"/>
+
+                <local:NoOutline
+                    x:Name="etUsername"
+                    Margin="20,0,5,-15"/>
+            </Grid>
+            <!-- End of Username Field-->
+
+            <!-- Password Field -->
+            <Grid>
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                    x:Name="lblPassword"
+                    AnchorY="2"
+                    AnchorX=".5"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    HorizontalOptions="Start"
+                    Text="Password"/>
+
+                <local:NoOutline
+                    x:Name="etPassword"
+                    Margin="20,0,37,-15"
+                    IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"/>
+
+                <ImageButton 
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    Source="passvisibleoff"
+                    BackgroundColor="Transparent"
+                    CornerRadius="100"
+                    Margin="0,0,8,0">
+                    <ImageButton.Triggers>
+                        <EventTrigger Event="Clicked">
+                            <local:ShowPasswordTriggerAction ShowIcon="passvisible"
+                                                              HideIcon="passvisibleoff"
+                                                              x:Name="ShowPasswordActualTrigger"/>
+                        </EventTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+            </Grid>
+            <!-- End of Password Field-->
+
+
+            <Label 
+                x:Name="lblForgotpass"
+                Text="Forgot Password?"
+                HorizontalOptions="End"
+                Margin="0,5,15,0"
+                TextColor="Red"
+                FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+
+
+            <Button x:Name="btnLogin" 
+                    Text="Login"
+                    WidthRequest="300"
+                    HeightRequest="50"
+                    Margin="0,30,0,0"
+                    HorizontalOptions="Center"
+                    BackgroundColor="{DynamicResource colorPrimaryDark}"
+                    TextColor="White"
+                    BorderRadius="20"
+                    Clicked="OnButtonLogin"/>
+
+            <Button x:Name="btnSignup" 
+                    Text="Sign up" 
+                    WidthRequest="300"
+                    HeightRequest="50"
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="Center"
+                    BackgroundColor="{DynamicResource colorPrimaryDark}"
+                    TextColor="White"
+                    BorderRadius="20"
+                    Clicked="OnButtonSignup"/>
+            
+        </StackLayout>
+
+
+        <controls:CircularProgressBar 
+                x:Name="progressbar" 
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                WidthRequest="40" 
+                HeightRequest="40" 
+                Spin="True" 
+                Color="Blue"
+                IsVisible="False"/>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace MobileApp
+{
+    class zsg_ApiKey
+    {
+
+        private static string sendgridKey, sendgridEmail;
+
+        public void loadKeys()
+        {
+            sendgridEmail = "sti_ibarangay@outlook.com";
+        }
+
+        public void setSendGridKey(string key)
+        {
+            sendgridKey = key;
+        }
+
+
+        public void setSendGridEmail(string email)
+        {
+            sendgridEmail = email;
+        }
+
+
+        public string getSendGridKey()
+        {
+            return sendgridKey;
+        }
+
+        public string getSendGridEmail()
+        {
+            return sendgridEmail;
+        }
+    }
+}

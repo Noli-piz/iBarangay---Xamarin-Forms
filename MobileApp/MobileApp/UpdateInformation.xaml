@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Controls;assembly=CircularProgressBar"
+             xmlns:local="clr-namespace:MobileApp.View"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="MobileApp.UpdateInformation">
+
+    <ScrollView>
+        <StackLayout
+            Padding="20">
+            <Label x:Name="lblBack" 
+                Text="BACK"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start"
+                TextColor="Red"/>
+
+            <Frame CornerRadius="100" 
+                           HeightRequest="200"
+                           WidthRequest="200"
+                           HorizontalOptions="Center"
+                           Padding="0"
+                           Margin="0,0,0,10"
+                           IsClippedToBounds="True">
+
+                <ImageButton x:Name="ImgProfile"
+                             Source="profile.jpg"
+                               MinimumWidthRequest="100"
+                               MinimumHeightRequest="100"
+                               HorizontalOptions="Fill"
+                               Aspect="AspectFill"
+                               Clicked="OnButtonSelectImage"/>
+            </Frame>
+
+            <Label 
+                Text="Select new image."
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="20"
+                TextColor="Black"
+                Margin="0,0,0,30"/>
+
+            <!-- Firstname Field -->
+            <Grid>
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblFname"
+                        AnchorY="2"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        Text="First Name"/>
+
+                <local:NoOutline
+                        x:Name="etFname"
+                        Margin="20,0,20,-15"/>
+            </Grid>
+            <!-- End of Firstname Field-->
+
+
+
+            <!-- Middlename Field -->
+            <Grid>
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblMname"
+                        AnchorY="2"
+                        AnchorX=".3"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Middle Name (Optional)"/>
+
+                <local:NoOutline
+                        x:Name="etMname"
+                        Margin="20,0,20,-15"/>
+            </Grid>
+            <!-- End of Middlename Field-->
+
+
+            <!-- Lastname Field -->
+            <Grid>
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblLname"
+                        AnchorY="2"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Last Name"/>
+
+                <local:NoOutline
+                        x:Name="etLname"
+                        Margin="20,0,20,-15"/>
+            </Grid>
+            <!-- End of Lastname Field-->
+
+
+            <!-- Suffixname Field -->
+            <Grid>
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblSname"
+                        AnchorY="2"
+                        AnchorX=".3"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Suffix Name (Optional)"/>
+
+                <local:NoOutline
+                        x:Name="etSname"
+                        Margin="20,0,20,-15"/>
+            </Grid>
+            <!-- End of Suffixname Field-->
+
+
+            <!-- Birthplace Field -->
+            <Grid
+                HeightRequest="100">
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblBirthplace"
+                        AnchorY="4"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Birthplace"/>
+
+                <local:NoOutlineEditor
+                        x:Name="etBirthplace"
+                        Margin="20,10,20,-5"/>
+            </Grid>
+            <!-- End of Birthplace Field-->
+
+
+            <!-- Birthdate Field -->
+            <Grid
+                HeightRequest="60">
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        AnchorY="1"
+                        AnchorX=".1"
+                        Margin="15,0,0,0"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Birthdate"/>
+
+                <ImageButton 
+                        Source="ic_calendar"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,0,25,0"/>
+
+                <local:NoOutlineDatePicker
+                    x:Name="dtBirthday"
+                        Format="MMMM dd, yyyy"
+                        Date="{x:Static system:DateTime.Today}"
+                        Margin="20,10,5,-5"/>
+            </Grid>
+            <!-- End of Birthdate Field-->
+
+
+
+            <!-- House No. And Street Field -->
+            <Grid
+                HeightRequest="100">
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblHouseNoAndStreet"
+                        AnchorY="4"
+                        AnchorX=".3"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="House No. And Street."/>
+
+                <local:NoOutlineEditor
+                        x:Name="etHouseNoAndStreet"
+                        Margin="20,10,20,-5"/>
+            </Grid>
+            <!-- End of House No. And Street Field-->
+
+
+            <!-- Civil Status Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="Transparent"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource orange}"/>
+
+                <Label
+                        AnchorY="3"
+                        AnchorX=".1"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Select Civil Status"
+                        Margin="15,0"/>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerCivil"
+                        Margin="15,10,0,0"/>
+
+            </Grid>
+            <!-- End of Civil Status Field-->
+
+
+            <!-- Gender Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="Transparent"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource orange}"/>
+
+                <Label
+                        AnchorY="3"
+                        AnchorX=".1"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Select Gender"
+                        Margin="15,0"/>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerGender"
+                        Margin="15,10,0,0"/>
+
+            </Grid>
+            <!-- End of Gender Field-->
+
+            <!-- Purok Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="Transparent"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource orange}"/>
+
+                <Label
+                        AnchorY="3"
+                        AnchorX=".1"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Select Purok"
+                        Margin="15,0"/>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerPurok"
+                        Margin="15,10,0,0"/>
+
+            </Grid>
+            <!-- End of Purok Field-->
+
+
+            <!-- Voter Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="Transparent"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource orange}"/>
+
+                <Label
+                        AnchorY="3"
+                        AnchorX=".1"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Are you a registered voter?"
+                        Margin="15,0"/>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerVoter"
+                        Margin="15,10,0,0"/>
+
+            </Grid>
+            <!-- End of Voter Field-->
+
+            <!-- Cedula Field -->
+            <Grid>
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblCedulaNo"
+                        AnchorY="2"
+                        AnchorX=".3"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Cedula No. (Optional)"/>
+
+                <local:NoOutline
+                    x:Name="etCedulaNo"
+                    Margin="20,0,20,-15"
+                    Keyboard="Telephone"/>
+            </Grid>
+            <!-- End of Cedula Field-->
+
+
+
+            <!-- Contact Field -->
+            <Grid>
+                <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label
+                        x:Name="lblContactNo"
+                        AnchorY="2"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Contact No."/>
+
+                <local:NoOutline
+                    x:Name="etContactNo"
+                    Margin="20,0,20,-15"
+                    Keyboard="Telephone"/>
+            </Grid>
+            <!-- End of Contact Field-->
+
+
+            <Button x:Name="btnUpdate" 
+                Text="Update" 
+                WidthRequest="300"
+                HeightRequest="50"
+                Margin="0,30,0,30"
+                HorizontalOptions="Center"
+                BackgroundColor="{DynamicResource colorPrimaryDark}"
+                TextColor="White"
+                BorderRadius="20"
+                Clicked="OnButtonClicked"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

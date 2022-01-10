@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MobileApp.View"
+             x:Class="MobileApp.SignUpNonResident">
+
+
+    <ScrollView>
+        <StackLayout Padding="20">
+
+            <!-- Place of voter's Registration Field -->
+            <Grid
+                HeightRequest="100">
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblPlaceRegistration"
+                    AnchorY="4"
+                    AnchorX=".3"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Place of voter's registration." TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutlineEditor
+                        x:Name="etPlaceRegistration"
+                        Margin="20,10,20,-5"/>
+            </Grid>
+            <Label x:Name="vldHouseNoAndStreet" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Place  voter's Registration Field-->
+
+
+            <!-- Former Complete Address Field -->
+            <Grid
+                HeightRequest="100">
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblFormerAddress"
+                    AnchorY="4"
+                    AnchorX=".3"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Complete Former Address." TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutlineEditor
+                        x:Name="etFormerAddress"
+                        Margin="20,10,20,-5"/>
+            </Grid>
+            <Label x:Name="vldFormerAddress" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Former Complete Address Field-->
+
+            <Button x:Name="btnSignup" 
+                Text="UPLOAD FILE" 
+                WidthRequest="300"
+                HeightRequest="50"
+                Margin="0,30,0,30"
+                HorizontalOptions="Center"
+                BackgroundColor="Blue"
+                TextColor="White"/>
+            
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

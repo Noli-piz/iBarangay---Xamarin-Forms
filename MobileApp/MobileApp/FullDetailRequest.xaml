@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="MobileApp.FullDetailRequest">
+    
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+
+            <Label x:Name="lblBack"
+                       Text="BACK"
+                       TextColor="Red"
+                       Margin="0,20,0,30"/>
+
+            <StackLayout>
+                <Label x:Name="txtDateOfRequest"
+                       Text="Requested Date: "
+                       TextColor="Black"/>
+
+                <Label x:Name="lblDateOfRequest"
+                       FontSize="22"/>
+            </StackLayout>
+            
+            <StackLayout>
+                <Label x:Name="txtTypes"
+                       Text="Document Type: "
+                       TextColor="Black"/>
+        
+                <Label x:Name="lblTypes"
+                       FontSize="22"/>
+            </StackLayout>
+            
+            
+            <StackLayout>
+                <Label x:Name="txtStatus"
+                       Text="Status: "
+                       TextColor="Black"/>
+        
+                <Label x:Name="lblStatus"
+                       FontSize="22"/>
+            </StackLayout>
+
+            
+            <StackLayout>
+                <Label x:Name="txtOptions"
+                       Text="Options: "
+                       TextColor="Black"/>
+
+                    <Label x:Name="lblOptions"
+                       FontSize="22"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label x:Name="txtNote"
+                       Text="Note: "
+                       TextColor="Black"/>
+        
+                <Label x:Name="lblNote"
+                       FontSize="22"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label x:Name="txtPurpose"
+                   Text="Purpose: "
+                   TextColor="Black"/>
+
+                <Label x:Name="lblPurpose" 
+                   FontSize="22"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

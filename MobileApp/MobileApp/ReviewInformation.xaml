@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="MobileApp.ReviewInformation">
+
+    <ScrollView>
+        <Grid Margin="0,20,0,0">
+            <StackLayout
+                Padding="10"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand">
+
+                <Label x:Name="lblBack"
+                       Text="BACK"
+                       TextColor="Red"
+                       Margin="5,5,0,20"/>
+
+                <Label Text="Review your Information"
+                       TextColor="Black"
+                       FontSize="35"
+                       FontAttributes="Bold"/>
+
+                <Label Text="Check your spelling, important statuses, and dates."
+                       TextColor="DarkGray"
+                       FontSize="20"
+                       Margin="0,0,0,30"/>
+
+                <Frame CornerRadius="100" 
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   Padding="2"
+                   Margin="0,0,0,30"
+                   IsClippedToBounds="True">
+
+                    <Frame CornerRadius="100" 
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       HorizontalOptions="Center"
+                       Padding="2"
+                       IsClippedToBounds="True">
+
+                        <Image x:Name="ImgProfile"
+                               MinimumWidthRequest="100"
+                               MinimumHeightRequest="100"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Aspect="AspectFill"/>
+                    </Frame>
+                </Frame>
+
+                <Label Text="First Name"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblFName"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+                
+                
+                <Label x:Name="txtMName"
+                        Text="Middle Name"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"
+                       IsVisible="false"/>
+
+                <Label x:Name="lblMName"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"
+                       IsVisible="false"/>
+
+                <Label Text="Last Name"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblLName"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+
+                <Label x:Name="txtSName"
+                       Text="Suffix Name"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"
+                       IsVisible="false"/>
+
+                <Label x:Name="lblSName"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"
+                       IsVisible="false"/>
+                
+
+                <Label Text="Birthplace"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblBirthplace"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="Birthdate"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblBirthdate"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="House No. and Street."
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+                
+                <Label x:Name="lblHouseNoAndStreet"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="Civil Status"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblCivilStatus"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="Gender"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblGender"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="Purok"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblPurok"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="Voter Status"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblVoterStatus"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="Cedula No."
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblCedulaNo"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+                <Label Text="Contact No."
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"/>
+
+                <Label x:Name="lblContactNo"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"/>
+
+
+                <Label x:Name="txtPlaceRegistration"
+                       Text="Place of voter's registration"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"
+                       IsVisible="false"/>
+
+                <Label x:Name="lblPlaceRegistration"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"
+                       IsVisible="false"/>
+
+                <Label x:Name="txtFormerAddress"
+                       Text="Former Address"
+                       TextColor="Gray"
+                       FontSize="12"
+                       Margin="10,0,0,0"
+                       IsVisible="false"/>
+
+                <Label x:Name="lblFormerAddress"
+                       TextColor="Black"
+                       FontSize="15"
+                       Margin="10,0,0,15"
+                       IsVisible="false"/>
+                
+
+                <StackLayout Orientation="Horizontal" Margin="0,20">
+
+                    <CheckBox x:Name="cbAccept" HorizontalOptions="Start" VerticalOptions="Start"/>
+
+                    <Label 
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,0"
+                        FontSize="15"
+                        FontFamily="Segoe UI"
+                        TextColor="Black">
+
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="I hereby declare that the entered information is true and correct to the full extent of my knowledge." />
+
+                                    <Span FontAttributes="Bold"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                    </Label>
+
+                </StackLayout>
+
+
+                <Button x:Name="btnSignup" 
+                        Text="Sign Up" 
+                        WidthRequest="300"
+                        HeightRequest="50"
+                        Margin="0,20,0,50"
+                        HorizontalOptions="Center"
+                        BackgroundColor="{DynamicResource colorPrimaryDark}"
+                        TextColor="White"
+                        BorderRadius="20"
+                        Clicked="OnButtonClicked"/>
+                
+            </StackLayout>
+
+            <ActivityIndicator
+                x:Name="progressbar"
+                Color="#006699"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                IsVisible="False"
+                IsRunning="True" />
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:local="clr-namespace:MobileApp.View"
+             x:Class="MobileApp.RRequestModule">
+    
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20,50,20,0"
+            BackgroundColor="White">
+
+            <Label x:Name="lblBack"
+                   Text="BACK"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start"
+                   TextColor="Red"
+                   Margin="0,0,0,25"/>
+            
+            <!-- Certificate Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,0">
+                <Frame
+                        BorderColor="Transparent"
+                        CornerRadius="0"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="Transparent"/>
+
+                <Label
+                        AnchorY="1"
+                        AnchorX=".1"
+                        Padding="3"
+                        BackgroundColor="Transparent">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Select a type of Certificate" TextColor="Black"/>
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerCertificate"
+                        Margin="0,10,0,0"
+                        SelectedIndexChanged="OnSelectIndexChange"/>
+            </Grid>
+
+            <Label x:Name="vldCertificate" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false" />
+
+            <!-- End of Item Field-->
+
+
+            <Label Margin="0,10,0,0" 
+                   BackgroundColor="Transparent">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Purpose" TextColor="Black"/>
+                        <Span Text=" *" TextColor="Red"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            
+
+            <Frame 
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                CornerRadius="5"
+                HasShadow="False">
+                
+                <local:NoOutlineEditor x:Name="etPurpose"
+                        Placeholder="Enter Purpose." 
+                        BackgroundColor="LightCyan"
+                        HeightRequest="100"/>
+            </Frame>
+            <Label x:Name="vldPurpose" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false" />
+
+
+            <!-- Delivery Option Field -->
+            <Grid HeightRequest="70" Margin="0,10,0,0">
+                <Frame
+                        BorderColor="Transparent"
+                        CornerRadius="0"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="Transparent"/>
+
+                <Label
+                        AnchorY="1"
+                        AnchorX=".1"
+                        Padding="3"
+                        BackgroundColor="Transparent">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Delivery Option" TextColor="Black"/>
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerDelivery"
+                        Margin="0,10,0,0"/>
+            </Grid>
+            
+            <Label x:Name="vldDeliveryOption" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,0" IsVisible="false" />
+
+            <!-- End of Delivery Option Field-->
+
+            <Label x:Name="lblDocumentFee" Margin="0,10"
+                   Text="Document Fee: "
+                   HorizontalOptions="Start"
+                   TextColor="Red"
+                   FontAttributes="Bold"
+                   FontFamily="Segoe ui"/>
+
+            <Label x:Name="lblDeliveryFee"
+                   Text="Delivery Fee: "
+                   HorizontalOptions="Start"
+                   TextColor="Red"
+                   FontAttributes="Bold"/>
+
+            <Button x:Name="btnRequest" 
+                Text="Request" 
+                WidthRequest="300"
+                HeightRequest="50"
+                Margin="0,50,0,30"
+                HorizontalOptions="Center"
+                BackgroundColor="{DynamicResource colorPrimaryDark}"
+                TextColor="White"
+                BorderRadius="20"
+                Clicked="OnButtonClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

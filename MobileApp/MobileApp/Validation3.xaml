@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false"
+             xmlns:local="clr-namespace:MobileApp.View"
+             x:Class="MobileApp.Validation3">
+    
+    
+    <ScrollView>
+        <Grid>
+            <StackLayout Padding="20">
+
+                <Label x:Name="lblBack"
+                       Text="BACK"
+                       TextColor="Red"
+                       Margin="5,20,0,30"/>
+
+                <Label Text="Please Enter or Finalized your Cedula No."
+                       HorizontalOptions="Center"/>
+
+                <!-- Cedula Field -->
+                <Grid Margin="0,20,0,20">
+                    <Frame
+                        BorderColor="Orange"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label
+                            x:Name="lblCedulaNo"
+                            AnchorY="2"
+                            AnchorX=".5"
+                            Margin="15"
+                            Padding="3"
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            HorizontalOptions="Start"
+                            Text="Cedula No."/>
+
+                    <local:NoOutline
+                            x:Name="etCedulaNo"
+                            Margin="20,0,20,-15"/>
+                </Grid>
+                <!-- End of Cedula Field-->
+
+
+                <Button x:Name="btnNext" 
+                    Text="Submit" 
+                    WidthRequest="300"
+                    HeightRequest="50"
+                    BackgroundColor="{DynamicResource colorPrimaryDark}"
+                    TextColor="White"
+                    BorderRadius="20"
+                    Clicked="OnButtonNext"/>
+            
+            </StackLayout>
+
+            <ActivityIndicator
+                x:Name="progressbar"
+                Color="#006699"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                IsVisible="False"
+                IsRunning="True" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

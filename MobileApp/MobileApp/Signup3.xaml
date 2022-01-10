@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Controls;assembly=CircularProgressBar"
+             xmlns:local="clr-namespace:MobileApp.View"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="MobileApp.Signup3">
+    
+    <ScrollView>
+        <StackLayout
+            Padding="20">
+            <Label x:Name="lblBack" 
+                Text="Back"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" 
+                FontSize="15"
+                TextColor="Red"/>
+
+            
+            <Frame CornerRadius="100" 
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   HorizontalOptions="Center"
+                   Padding="2"
+                   Margin="0,0,0,10"
+                   IsClippedToBounds="True">
+
+                <Frame CornerRadius="100" 
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       HorizontalOptions="Center"
+                       Padding="2"
+                       IsClippedToBounds="True">
+
+                    <ImageButton x:Name="ImgProfile"
+                                 Source="profile.jpg"
+                               Padding="2"
+                                   MinimumWidthRequest="100"
+                                   MinimumHeightRequest="100"
+                                   HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                   Aspect="AspectFill"
+                                   Clicked="OnButtonSelectImage"/>
+                </Frame>
+            </Frame>
+
+            <Label x:Name="lblSelectImage"
+                Text="Select an image"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="20"
+                TextColor="Black"
+                Margin="0"/>
+
+            <Label x:Name="vldImage" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0" IsVisible="false"/>
+
+            
+            
+            <!-- Firstname Field -->
+            <Grid Margin="0,30,0,0">
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblFname"
+                    AnchorY="2"
+                    AnchorX=".5"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                            <Span Text="First Name" TextColor="{DynamicResource TextColor}"/>
+
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                </Label>
+                
+                <local:NoOutline
+                        x:Name="etFname"
+                    Keyboard="Plain"
+                        Margin="20,0,20,-15"/>
+                
+            </Grid>
+
+            <Label x:Name="vldFirstname" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+
+            <!-- End of Firstname Field-->
+            
+            
+
+            <!-- Middlename Field -->
+            <Grid >
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblMname"
+                    AnchorY="2"
+                    AnchorX=".3"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Middle Name (Optional)" TextColor="{DynamicResource TextColor}"/>
+
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutline
+                        x:Name="etMname"
+                        Margin="20,0,20,-15"/>
+            </Grid>
+            <!-- End of Middlename Field-->
+
+            
+            
+            <!-- Lastname Field -->
+            <Grid>
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblLname"
+                    AnchorY="2"
+                    AnchorX=".5"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Last Name" TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutline
+                        x:Name="etLname"
+                        Margin="20,0,20,-15"/>
+            </Grid>
+            <Label x:Name="vldLastname" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+
+            <!-- End of Lastname Field-->
+
+
+            
+            <!-- Suffixname Field -->
+            <Grid>
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblSname"
+                    AnchorY="2"
+                    AnchorX=".5"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Suffix Name (Optional)" TextColor="{DynamicResource TextColor}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutline
+                        x:Name="etSname"
+                        Margin="20,0,20,-15"/>
+            </Grid>
+            <!-- End of Suffixname Field-->
+
+            
+            
+            <StackLayout Orientation="Horizontal">
+                <!-- Birthdate Field -->
+                <Grid
+                    HeightRequest="60"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame
+                        BorderColor="{DynamicResource EntryBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label 
+                        AnchorY="1"
+                        AnchorX=".1"
+                        Margin="15,0"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start">
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Birthdate" TextColor="{DynamicResource TextColor}"/>
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <ImageButton 
+                        Source="ic_calendar"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,0,25,0"/>
+
+                    <local:NoOutlineDatePicker
+                        x:Name="dtBirthday"
+                        Format="MMMM dd, yyyy"
+                        Date="{x:Static system:DateTime.Today}"
+                        DateSelected="OnDatePicker"
+                        Margin="20,10,5,-5"/>
+                </Grid>
+                <!-- End of Birthdate Field-->
+
+
+                <!-- Age Field -->
+                <Grid WidthRequest="75">
+                    <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label
+                        AnchorY="1"
+                        AnchorX=".1"
+                        Margin="15,0"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start">
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Age" TextColor="{DynamicResource TextColor}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label x:Name="lblAge" Text="0" FontSize="25" TextColor="{DynamicResource TextColor}"
+                            Margin="20,18,5,-5"/>
+                </Grid>
+                <!-- End of Age Field-->
+
+            </StackLayout>
+            <Label x:Name="vldBirthdate" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            
+            
+
+            <!-- Birthplace Field -->
+            <Grid
+                HeightRequest="100">
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblBirthplace"
+                    AnchorY="4"
+                    AnchorX=".5"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Birthplace" TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutlineEditor
+                        x:Name="etBirthplace"
+                        Margin="20,10,20,-5"/>
+            </Grid>
+            <Label x:Name="vldBirthplace" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Birthplace Field-->
+
+
+            <!-- Gender Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="{DynamicResource PickerBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource PickerBG}"/>
+
+                <Label 
+                    AnchorY="3"
+                    AnchorX=".1"
+                    Margin="15,0"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Select Gender" TextColor="{DynamicResource TextColor}"/>
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerGender"
+                        Margin="13,10,0,0"/>
+
+            </Grid>
+            <Label x:Name="vldGender" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Gender Field-->            
+
+            
+            <!-- Civil Status Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="{DynamicResource PickerBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource PickerBG}"/>
+
+                <Label 
+                    AnchorY="3"
+                    AnchorX=".1"
+                    Margin="15,0"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Select Civil Status" TextColor="{DynamicResource TextColor}"/>
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerCivil"
+                        Margin="12,10,0,0"/>
+
+            </Grid>
+            <Label x:Name="vldCivilStatus" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Civil Status Field-->
+
+            <!-- Contact Field -->
+            <Grid>
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblContactNo"
+                    AnchorY="2"
+                    AnchorX=".5"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Contact No." TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutline
+                    x:Name="etContactNo"
+                    Margin="20,0,20,-15"
+                    Keyboard="Telephone"/>
+            </Grid>
+            <Label x:Name="vldContactNo" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Contact Field-->
+
+            
+            <!-- House No. And Street Field -->
+            <Grid
+                HeightRequest="100">
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblHouseNoAndStreet"
+                    AnchorY="4"
+                    AnchorX=".3"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="House No. And Street." TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutlineEditor
+                        x:Name="etHouseNoAndStreet"
+                        Margin="20,10,20,-5"/>
+            </Grid>
+            <Label x:Name="vldHouseNoAndStreet" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of House No. And Street Field-->
+
+            
+            <!-- Purok Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="{DynamicResource PickerBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource PickerBG}"/>
+
+                <Label 
+                    AnchorY="3"
+                    AnchorX=".1"
+                    Margin="15,0"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Select Purok" TextColor="{DynamicResource TextColor}"/>
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerPurok"
+                        Margin="13,10,0,0"/>
+
+            </Grid>
+            <Label x:Name="vldPurok" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Purok Field-->
+            
+            
+             <!--Voter Field-->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="{DynamicResource PickerBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource PickerBG}"/>
+
+                <Label 
+                    AnchorY="3"
+                    AnchorX=".1"
+                    Margin="15,0"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Are you a registered voter?" TextColor="{DynamicResource TextColor}"/>
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerVoter"
+                        Margin="13,10,0,0"
+                    SelectedIndexChanged="OnVoterStatusChanged"/>
+
+            </Grid>
+            <Label x:Name="vldVoterStatus" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+             <!--End of Voter Field-->
+
+            
+            <!-- Cedula Field -->
+            <Grid>
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblCedulaNo"
+                    AnchorY="2"
+                    AnchorX=".3"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Cedula No." TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutline
+                    x:Name="etCedulaNo"
+                    Margin="20,0,20,-15"
+                    Keyboard="Telephone"/>
+            </Grid>
+            <Label x:Name="vldCedula" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Cedula Field-->
+            
+            
+            <!-- Are you a resident? -->
+            <StackLayout Margin="0,0,0,30">
+                <Label 
+                    x:Name="lblQuestion"
+                    Margin="0,15,0,0"
+                    Padding="3"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Are you resident of Brgy: Balangkas, Valenzuel City?" TextColor="Black" FontSize="18"/>
+
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <RadioButton Content="Yes" CheckedChanged="rbAnswerChanged" IsChecked="True"/>
+                <RadioButton Content="No" CheckedChanged="rbAnswerChanged"/>
+
+            </StackLayout>
+
+
+            <StackLayout x:Name="stckForNonResident">
+                
+                <!-- Place of voter's Registration Field -->
+                <Grid x:Name="fldPlaceRegistration"
+                    HeightRequest="100">
+                    <Frame
+                        BorderColor="{DynamicResource EntryBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label 
+                        x:Name="lblPlaceRegistration"
+                        AnchorY="4"
+                        AnchorX=".3"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start">
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Place of voter's registration." TextColor="{DynamicResource TextColor}"/>
+
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <local:NoOutlineEditor
+                            x:Name="etPlaceRegistration"
+                            Margin="20,10,20,-5"/>
+                </Grid>
+                <Label x:Name="vldPlaceRegistration" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+                <!-- End of Place  voter's Registration Field-->
+
+
+                <!-- Former Complete Address Field -->
+                <Grid
+                    HeightRequest="100">
+                    <Frame
+                        BorderColor="{DynamicResource EntryBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label 
+                        x:Name="lblFormerAddress"
+                        AnchorY="4"
+                        AnchorX=".3"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start">
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Complete Former Address." TextColor="{DynamicResource TextColor}"/>
+
+                                <Span Text=" *" TextColor="Red"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <local:NoOutlineEditor
+                            x:Name="etFormerAddress"
+                            Margin="20,10,20,-5"/>
+                </Grid>
+                <Label x:Name="vldFormerAddress" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+                <!-- End of Former Complete Address Field-->
+
+
+                <Label
+                    TextColor="Black"
+                    Margin="0,30,0,10">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Please upload a document to prove that you are currently a resident of Brgy. Balangkas, Valenzuela City."/>
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                            <Span Text="Examples:" />
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                            <Span Text="1.) Letter From the Landlord" />
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                            <Span Text="2.) Certificate of Employment indicating that you are living in a barracks." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Button x:Name="btnUpload" 
+                    Text="UPLOAD FILE" 
+                    WidthRequest="250"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    BorderRadius="50"
+                    FontSize="15"
+                    Clicked="OnClickFileUpload"/>
+                
+                <Label x:Name="vldUploadFile" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+
+            </StackLayout>
+
+            <Button x:Name="btnSignup" 
+                Text="Next" 
+                WidthRequest="300"
+                HeightRequest="50"
+                Margin="0,30,0,30"
+                HorizontalOptions="Center"
+                BackgroundColor="{DynamicResource colorPrimaryDark}"
+                TextColor="White"
+                BorderRadius="20"
+                Clicked="OnButtonClicked"/>
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>

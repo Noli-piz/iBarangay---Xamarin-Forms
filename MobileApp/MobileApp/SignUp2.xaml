@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="MobileApp.SignUp2">
+
+    <ScrollView>
+        <StackLayout
+            Padding="20">
+
+            <Label x:Name="lblBack"
+                           Text="BACK"
+                           TextColor="Red"
+                           Margin="5,0,0,30"/>
+        
+            <Image
+                Source="paperplane.png"
+                HeightRequest="150"
+                WidthRequest="150"/>
+
+            <Label 
+                HorizontalOptions="Center"
+                Margin="0,0,0,30"
+                FontSize="15"
+                FontFamily="Segoe UI"
+                TextColor="Black">
+            
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Please enter the email verification code that we sent you on " />
+
+                        <Span x:Name="lblEmail" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        
+            <StackLayout
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                Spacing="10">
+
+                <Entry x:Name="code1"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       MaxLength="1"
+                       HorizontalTextAlignment="Center"
+                       Keyboard="Numeric"
+                       FontAttributes="Bold"/>
+
+                <Entry x:Name="code2"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       MaxLength="1"
+                       HorizontalTextAlignment="Center"
+                       Keyboard="Numeric"
+                       FontAttributes="Bold"/>
+
+                <Entry x:Name="code3"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       MaxLength="1"
+                       HorizontalTextAlignment="Center"
+                       Keyboard="Numeric"
+                       FontAttributes="Bold"/>
+
+                <Entry x:Name="code4"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       MaxLength="1"
+                       HorizontalTextAlignment="Center"
+                       Keyboard="Numeric"
+                       FontAttributes="Bold"/>
+
+                <Entry x:Name="code5"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       MaxLength="1"
+                       HorizontalTextAlignment="Center"
+                       Keyboard="Numeric"
+                       FontAttributes="Bold"/>
+
+                <Entry x:Name="code6"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       MaxLength="1"
+                       HorizontalTextAlignment="Center"
+                       Keyboard="Numeric"
+                       FontAttributes="Bold"/>
+
+            </StackLayout>
+
+            <Label 
+                x:Name="lblResend"
+                Text="Resend Code?"
+                HorizontalOptions="Start"
+                TextColor="Black"
+                TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ResendCodeCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Button x:Name="btnNext" 
+                    Text="Next" 
+                    WidthRequest="300"
+                    HeightRequest="50"
+                    Margin="0,30,0,0"
+                    HorizontalOptions="Center"
+                    BackgroundColor="{DynamicResource colorPrimaryDark}"
+                    TextColor="White"
+                    BorderRadius="20"
+                    Clicked="OnButtonNext"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

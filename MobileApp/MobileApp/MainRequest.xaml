@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.MainRequest"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration;assembly=Xamarin.Forms.Core"
+            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+            xmlns:local="clr-namespace:MobileApp">
+
+    <StackLayout
+        BackgroundColor="Transparent">
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            
+            <xct:TabView TabStripPlacement="Top" 
+                 IsSwipeEnabled="True"
+                 TabIndicatorColor="{DynamicResource TabSelectedTextColor}">
+
+                <xct:TabViewItem Text="All"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:requestAll"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Pending"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:requestPending"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Approved"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:requestApproved"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Disapproved"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:requestDisapproved"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Received"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:requestReceived"/>
+                </xct:TabViewItem>
+            </xct:TabView>
+        </StackLayout>
+
+        <StackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+            <Button x:Name="btnRequest" 
+                    Text="Request"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    BackgroundColor="{DynamicResource colorPrimaryDark}"
+                    TextColor="White"
+                    CornerRadius="25"
+                    Margin="0,0,0,15"
+                    Clicked="OnButtonRequest"/>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

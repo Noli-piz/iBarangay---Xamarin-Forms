@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="MobileApp.TermsAndCondition">
+    <ContentPage.Content>
+
+
+        <ScrollView>
+            <StackLayout Padding="20">
+
+                <Label x:Name="lblBack"
+                           Text="BACK"
+                           TextColor="Red"
+                           Margin="5,5,0,20"/>
+
+                <Label Text="Terms and Condition"
+                           TextColor="Black"
+                           FontSize="45"
+                           FontFamily="Segoe UI"
+                           FontAttributes="Bold"/>
+
+                <Label Text="Lorem Ipsum."
+                           TextColor="DarkGray"
+                           FontSize="20"
+                           FontFamily="Segoe UI"
+                           FontAttributes="Bold"
+                           Margin="0,0,0,30"/>
+
+                <Label Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+                       TextColor="Black"
+                       FontSize="15"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Start"
+                       LineBreakMode="WordWrap"
+                       Margin="0,0,0,30"/>
+
+            
+                <Button x:Name="btnAccept" 
+                        Text="Accept" 
+                        WidthRequest="300"
+                        HeightRequest="50"
+                        Margin="0,30,0,0"
+                        HorizontalOptions="Center"
+                        BackgroundColor="DarkBlue"
+                        TextColor="White"
+                        BorderRadius="20"
+                        Clicked="OnButtonClickedAccept"/>
+
+                <Button x:Name="btnDecline" 
+                        Text="Decline" 
+                        WidthRequest="300"
+                        HeightRequest="50"
+                        Margin="0,0,0,30"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        BorderRadius="20"
+                        Clicked="OnButtonClickedDecline"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

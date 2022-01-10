@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.MyFlyoutPageFlyout"
+             Title="Flyout"
+             >
+
+    <StackLayout>
+        
+        <!--Menu Layout-->
+        
+        <ListView x:Name="MenuItemsListView"
+                  SeparatorVisibility="None"
+                  HasUnevenRows="true"
+                  ItemsSource="{Binding MenuItems}"
+                  IsPullToRefreshEnabled="True"
+                  IsRefreshing="False"
+                  BackgroundColor="White">
+          
+            <ListView.Header>
+
+                
+                <StackLayout 
+                    BackgroundColor="{DynamicResource FrameColor}"
+                    Background="announcement.jpg"
+                    Padding="10">
+                    
+                    
+                    <StackLayout>
+                        <Frame CornerRadius="100" 
+                           HeightRequest="120"
+                           WidthRequest="120"
+                           HorizontalOptions="Start"
+                           Padding="0"
+                           Margin="0,15,0,10"
+                           IsClippedToBounds="True">
+                            
+                            <ImageButton x:Name="ImgProfile"
+                               MinimumWidthRequest="100"
+                               MinimumHeightRequest="100"
+                               HorizontalOptions="Fill"
+                               Clicked="OnButtonUpdateInfo"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label x:Name="lblName"
+                            Text="Loading..."
+                            Grid.Column="0"
+                            Grid.Row="4"
+                            TextColor="White"
+                            FontSize="18"
+                            Style="{DynamicResource SubtitleStyle}"/>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label x:Name="lblVerificationStatus"
+                            Grid.Column="1"
+                            Grid.Row="4"
+                            Text="Status"
+                            TextColor="White"
+                            FontSize="15"
+                            Style="{DynamicResource SubtitleStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+                
+                <!--<Grid BackgroundColor="#03A9F4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+
+                    <Image x:Name="ImgProfile"
+                           Source="logo.png" 
+                           MinimumWidthRequest="100"
+                           MinimumHeightRequest="100"
+                           Grid.Column="0"
+                           Grid.Row="0"/>
+
+                    <Label Grid.Column="0"
+                           Grid.Row="4"
+                           Text="Name"
+                           Style="{DynamicResource SubtitleStyle}"/>
+
+                    <Label x:Name="lblVerificationStatus"
+                           Grid.Column="1"
+                           Grid.Row="4"
+                           Text="Status"
+                           Style="{DynamicResource SubtitleStyle}"/>
+                </Grid>-->
+
+            </ListView.Header>
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <Frame CornerRadius="5"
+                               Margin="5"
+                               Padding="10"
+                               HasShadow="False">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding IconSource}"/>
+                                <Label
+                                    Text="{Binding Title}" 
+                                    Grid.Column="1"
+                                    FontSize="18"
+                                    TextColor="Black"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

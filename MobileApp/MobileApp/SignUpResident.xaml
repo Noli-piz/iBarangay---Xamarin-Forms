@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MobileApp.View"
+             x:Class="MobileApp.SignUpResident">
+    
+    <ScrollView>
+        <StackLayout>
+
+            <!-- House No. And Street Field -->
+            <Grid
+                HeightRequest="100">
+                <Frame
+                    BorderColor="{DynamicResource EntryBorderColor}"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                <Label 
+                    x:Name="lblHouseNoAndStreet"
+                    AnchorY="4"
+                    AnchorX=".3"
+                    Margin="15"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="House No. And Street." TextColor="{DynamicResource TextColor}"/>
+
+                            <Span Text=" *" TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <local:NoOutlineEditor
+                        x:Name="etHouseNoAndStreet"
+                        Margin="20,10,20,-5"/>
+            </Grid>
+            <Label x:Name="vldHouseNoAndStreet" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of House No. And Street Field-->
+            
+
+            <!-- Purok Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="{DynamicResource PickerBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource PickerBG}"/>
+
+                <Label 
+                    AnchorY="3"
+                    AnchorX=".1"
+                    Margin="15,0"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Select Purok" TextColor="{DynamicResource TextColor}"/>
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerPurok"
+                        Margin="13,10,0,0"/>
+
+            </Grid>
+            <Label x:Name="vldPurok" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Purok Field-->
+            
+            
+            <!-- Voter Field -->
+            <Grid HeightRequest="70" Margin="0,0,0,5">
+                <Frame
+                        BorderColor="{DynamicResource PickerBorderColor}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        Padding="0,0,0,0"
+                        BackgroundColor="{DynamicResource PickerBG}"/>
+
+                <Label 
+                    AnchorY="3"
+                    AnchorX=".1"
+                    Margin="15,0"
+                    Padding="3"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Are you a registered voter?" TextColor="{DynamicResource TextColor}"/>
+                            <Span Text=" * " TextColor="Red"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <ImageButton 
+                        Source="ic_dropdown"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        BackgroundColor="Transparent"
+                        Margin="0,10,25,0"/>
+
+                <local:NoOutlinePicker 
+                        x:Name="pickerVoter"
+                        Margin="13,10,0,0"/>
+
+            </Grid>
+
+            <Label x:Name="vldVoterStatus" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+            <!-- End of Voter Field-->
+
+
+            <Button x:Name="btnSignup" 
+                Text="Next" 
+                WidthRequest="300"
+                HeightRequest="50"
+                Margin="0,30,0,30"
+                HorizontalOptions="Center"
+                BackgroundColor="{DynamicResource colorPrimaryDark}"
+                TextColor="White"
+                BorderRadius="20"
+                Clicked="OnButtonClicked"/>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

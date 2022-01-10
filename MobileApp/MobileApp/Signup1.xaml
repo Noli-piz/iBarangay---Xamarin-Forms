@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Controls;assembly=CircularProgressBar"
+             xmlns:local="clr-namespace:MobileApp.View"
+             NavigationPage.HasNavigationBar="false"
+             x:Class="MobileApp.Signup1">
+
+    <ScrollView>
+        <Grid
+            Margin="0,20,0,0">
+
+            <StackLayout
+                Padding="10"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand">
+                
+                <Label x:Name="lblBack"
+                       Text="BACK"
+                       TextColor="Red"
+                       Margin="5,5,0,20"/>
+            
+                <Label Text="Sign Up"
+                       TextColor="Black"
+                       FontSize="45"
+                       FontFamily="Segoe UI"
+                       FontAttributes="Bold"/>
+
+                <Label Text="Let's get Started."
+                       TextColor="DarkGray"
+                       FontSize="20"
+                       FontFamily="Segoe UI"
+                       FontAttributes="Bold"
+                       Margin="0,0,0,30"/>
+
+                <Label Text="Account Information"
+                       TextColor="Black"
+                       FontSize="20"
+                       FontFamily="Segoe UI"
+                       FontAttributes="Bold"
+                       Margin="10,0,0,0"/>
+
+                <!-- Email Field -->
+                <Grid>
+                    <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label
+                        x:Name="lblEmail"
+                        AnchorY="2"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Email"/>
+
+                    <local:NoOutline
+                        x:Name="etEmail"
+                        Keyboard="Email"
+                        Text=""
+                        Margin="20,0,5,-15"/>
+                </Grid>
+                
+                <Label x:Name="vldEmail" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+                
+                <!-- End of Email Field-->
+
+
+                <!-- Username Field -->
+                <Grid>
+                    <Frame
+                    BorderColor="Orange"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label
+                        x:Name="lblUsername"
+                        AnchorY="2"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Username"/>
+
+                    <local:NoOutline
+                        x:Name="etUsername"
+                        Text=""
+                        Margin="20,0,5,-15"/>
+                </Grid>
+
+                <Label x:Name="vldUsername" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+                <!-- End of Username Field-->
+
+
+                <!-- Password Field -->
+                <Grid>
+                    <Frame
+                        BorderColor="Orange"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label
+                        x:Name="lblPassword"
+                        AnchorY="2"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Password"/>
+
+                    <local:NoOutline
+                        x:Name="etPassword"
+                        Text=""
+                        Margin="20,0,37,-15"
+                        IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"/>
+
+                    <ImageButton 
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Source="passvisibleoff"
+                        BackgroundColor="Transparent"
+                        CornerRadius="100"
+                        Margin="0,0,8,0">
+                        <ImageButton.Triggers>
+                            <EventTrigger Event="Clicked">
+                                <local:ShowPasswordTriggerAction ShowIcon="passvisible"
+                                                                  HideIcon="passvisibleoff"
+                                                                  x:Name="ShowPasswordActualTrigger"/>
+                            </EventTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+                </Grid>
+
+                <Label x:Name="vldPassword" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+                <!-- End of Password Field-->
+
+                <!-- Confirm Password Field -->
+                <Grid>
+                    <Frame
+                        BorderColor="Orange"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        BackgroundColor="{DynamicResource EntryBG}"/>
+
+                    <Label
+                        x:Name="lblConfirmPassword"
+                        AnchorY="2"
+                        AnchorX=".5"
+                        Margin="15"
+                        Padding="3"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="Start"
+                        Text="Confirm Password"/>
+
+                    <local:NoOutline
+                        x:Name="etConfirmPassword"
+                        Text=""
+                        Margin="20,0,37,-15"
+                        IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger2}, Path=HidePassword}"/>
+
+                    <ImageButton 
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Source="passvisibleoff"
+                        BackgroundColor="Transparent"
+                        CornerRadius="100"
+                        Margin="0,0,8,0">
+                        <ImageButton.Triggers>
+                            <EventTrigger Event="Clicked">
+                                <local:ShowPasswordTriggerAction2 ShowIcon="passvisible"
+                                                                  HideIcon="passvisibleoff"
+                                                                  x:Name="ShowPasswordActualTrigger2"/>
+                            </EventTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+                </Grid>
+
+                <Label x:Name="vldConfirmPassword" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
+                <!-- End of Confirm Password Field-->
+
+                <Button x:Name="btnNext" 
+                        Text="Next" 
+                        WidthRequest="300"
+                        HeightRequest="50"
+                        Margin="0,30,0,0"
+                        HorizontalOptions="Center"
+                        BackgroundColor="{DynamicResource colorPrimaryDark}"
+                        TextColor="White"
+                        BorderRadius="20"
+                        Clicked="OnButtonNext"/>
+            </StackLayout>
+
+            <ActivityIndicator
+                x:Name="progressbar"
+                Color="#006699"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                IsVisible="False"
+                IsRunning="True" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

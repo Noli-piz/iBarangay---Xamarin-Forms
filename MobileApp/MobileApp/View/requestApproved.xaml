@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.requestApproved">
+    <StackLayout>
+
+        <ListView x:Name="RequestListView" 
+                ItemSelected="ListView_ItemSelected"
+                ItemTapped="ListView_Itemtapped"
+                HasUnevenRows="True"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="True"
+                >
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Frame CornerRadius="20" >
+                                <StackLayout>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Document: " 
+                                                              TextColor="Black"
+                                                              FontSize="16"
+                                                              FontFamily="Segoe UI"
+                                                              FontAttributes="Bold"/>
+
+
+                                                <Span  Text="{Binding Types}"
+                                                               TextColor="Black"
+                                                               FontSize="15"
+                                                               FontFamily="Segoe UI"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Requested Date: " 
+                                                              TextColor="Black"
+                                                              FontSize="15"
+                                                              FontFamily="Segoe UI"
+                                                              FontAttributes="Bold"/>
+
+
+                                                <Span  Text="{Binding DateOfRequest}"
+                                                               TextColor="Black"
+                                                               FontSize="15"
+                                                               FontFamily="Segoe UI"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label LineBreakMode="TailTruncation">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Purpose: " 
+                                                              TextColor="Black"
+                                                              FontSize="15"
+                                                              FontFamily="Segoe UI"
+                                                              FontAttributes="Bold"/>
+
+
+                                                <Span  Text="{Binding Purpose}"
+                                                               TextColor="Black"
+                                                               FontSize="15"
+                                                               FontFamily="Segoe UI"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label LineBreakMode="TailTruncation">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Status: " 
+                                                              TextColor="Black"
+                                                              FontSize="15"
+                                                              FontFamily="Segoe UI"
+                                                              FontAttributes="Bold"/>
+
+
+                                                <Span  Text="{Binding Status}"
+                                                               TextColor="Black"
+                                                               FontSize="15"
+                                                               FontFamily="Segoe UI"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentView>

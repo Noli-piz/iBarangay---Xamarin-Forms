@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MobileApp.MainMiscellaneousServices"
+            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+            xmlns:local="clr-namespace:MobileApp">
+
+    <StackLayout
+        BackgroundColor="Transparent">
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            
+            <xct:TabView TabStripPlacement="Top" 
+                 IsSwipeEnabled="True">
+
+                <xct:TabViewItem Text="All"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:misservicesAll"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Pending"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:misservicesPending"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Approved"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:misservicesApproved"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Disapproved"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:misservicesDisapproved"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Borrowed"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:misservicesBorrowed"/>
+                </xct:TabViewItem>
+
+
+                <xct:TabViewItem Text="Returned"
+                         TextColor="{DynamicResource TabTextColor}"
+                         TextColorSelected="{DynamicResource TabSelectedTextColor}"
+                         BackgroundColor="{DynamicResource TabBackgroundColor}">
+                    <xct:LazyView x:TypeArguments="local:misservicesReturned"/>
+                </xct:TabViewItem>
+            </xct:TabView>
+        </StackLayout>
+        
+        <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+            BackgroundColor="Transparent">
+            <Button x:Name="btnRequest" 
+                        Text="Request"
+                        WidthRequest="200"
+                        HeightRequest="50"
+                        BackgroundColor="{DynamicResource colorPrimaryDark}"
+                        TextColor="White"
+                        CornerRadius="25"
+                        Margin="0,0,0,15"
+                        Clicked="OnButtonRequest"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
