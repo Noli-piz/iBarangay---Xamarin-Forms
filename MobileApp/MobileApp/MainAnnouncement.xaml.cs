@@ -18,6 +18,8 @@ namespace MobileApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainAnnouncement : ContentPage
     {
+
+        zsg_nameandimage name = new zsg_nameandimage();
         public MainAnnouncement()
         {
             InitializeComponent();
@@ -101,7 +103,7 @@ namespace MobileApp
                 using (var client = new HttpClient())
                 {
                     zsg_hosting hosting = new zsg_hosting();
-                    var uri = hosting.getAnnouncement();
+                    var uri = hosting.getAnnouncement() + "?Username=" + name.getStrusername() ;
                     var result = await client.GetStringAsync(uri);
 
 

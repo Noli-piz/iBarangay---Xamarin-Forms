@@ -44,6 +44,14 @@ namespace MobileApp
                     Navigation.PopAsync();
                 })
             });
+
+            lblTermsAndCondition.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+                    Navigation.PushAsync(new TermsAndCondition());
+                })
+            });
         }
 
 
@@ -204,11 +212,19 @@ namespace MobileApp
                 CountError++;
             }
 
+
             if(CountError <=0 )
             {
                 if (CheckEmail(etEmail.Text) == true)
                 {
-                    ValidateUsername();
+                    if (cbAccept.IsChecked == false)
+                    {
+                        await DisplayAlert("Terms and Conditions", "Please read and Agree to the Terms and Conditions.", "OK");
+                    }
+                    else
+                    {
+                        ValidateUsername();
+                    }
                 }
                 else
                 {
@@ -249,7 +265,7 @@ namespace MobileApp
                 }
                 else
                 {
-                    DisplayAlert("Invalid Email or Username.", responseFromServer, "OK");
+                    DisplayAlert("Already Exist", responseFromServer, "OK");
                 }
             }
             catch (Exception ex)

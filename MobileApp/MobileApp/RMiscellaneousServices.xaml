@@ -319,7 +319,7 @@
                     WidthRequest="300"
                     HeightRequest="50"
                     HorizontalOptions="Center"
-                    BackgroundColor="{DynamicResource navy1}"
+                    BackgroundColor="{DynamicResource colorPrimaryDark}"
                     TextColor="White"
                     BorderRadius="20"
                     Clicked="OnButtonClicked"/>

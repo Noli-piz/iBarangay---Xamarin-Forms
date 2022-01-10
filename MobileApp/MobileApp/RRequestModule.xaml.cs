@@ -99,9 +99,9 @@ namespace MobileApp
             
             if(CountError <=0 )
             {
-                bool answer = await DisplayAlert("", "You are about to request " + strCertificate
+                bool answer = await DisplayAlert("Confirm", "You are about to request " + strCertificate
                     + " for the purpose of " + etPurpose.Text
-                    + ". \n\n Your request will be processed approximately 1-5 days.", "Confirm", "Back");
+                    + ". \n\nYour request will be processed approximately 1-5 days.", "Confirm", "Back");
 
                 if (answer == true)
                 {

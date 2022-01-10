@@ -194,6 +194,37 @@
                 <Label x:Name="vldConfirmPassword" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center" Margin="0,0,0,10" IsVisible="false"/>
                 <!-- End of Confirm Password Field-->
 
+
+                <!--- Terms And Condition -->
+
+                <StackLayout Orientation="Horizontal" Margin="0,15" HorizontalOptions="Center">
+
+                    <CheckBox x:Name="cbAccept" HorizontalOptions="Start" VerticalOptions="Start"/>
+
+                <Label 
+                    x:Name="lblFname"
+                    Margin="0,4"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start">
+
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="I Agree to the " TextColor="Black"/>
+
+                                <Span x:Name="lblTermsAndCondition" 
+                                      Text="Terms and Conditions." 
+                                      TextColor="Black" 
+                                      FontAttributes="Bold"
+                                      TextDecorations="Underline"/>
+                                
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    
+                </StackLayout>
+                <!--- End Terms And Condition -->
+
+                
                 <Button x:Name="btnNext" 
                         Text="Next" 
                         WidthRequest="300"

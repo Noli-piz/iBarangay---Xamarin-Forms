@@ -13,7 +13,6 @@ namespace MobileApp
 
             MainPage = new NavigationPage(new SplashScreen());
             //MainPage = new MyFlyoutPage();
-
         }
 
 

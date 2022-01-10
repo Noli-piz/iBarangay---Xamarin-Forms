@@ -7,7 +7,7 @@
 
 
         <ScrollView>
-            <StackLayout Padding="20">
+            <StackLayout Padding="10,20">
 
                 <Label x:Name="lblBack"
                            Text="BACK"
@@ -36,7 +36,7 @@
                        Margin="0,0,0,30"/>
 
             
-                <Button x:Name="btnAccept" 
+                <!--<Button x:Name="btnAccept" 
                         Text="Accept" 
                         WidthRequest="300"
                         HeightRequest="50"
@@ -56,7 +56,7 @@
                         BackgroundColor="Red"
                         TextColor="White"
                         BorderRadius="20"
-                        Clicked="OnButtonClickedDecline"/>
+                        Clicked="OnButtonClickedDecline"/>-->
 
             </StackLayout>
         </ScrollView>
