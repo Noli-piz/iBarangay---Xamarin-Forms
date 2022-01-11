@@ -16,13 +16,21 @@ namespace MobileApp
         {
             InitializeComponent();
 
-            lblBack.GestureRecognizers.Add(new TapGestureRecognizer()
-            {
-                Command = new Command(() =>
-                {
-                    Navigation.PopAsync();
-                })
-            });
+            //lblBack.GestureRecognizers.Add(new TapGestureRecognizer()
+            //{
+            //    Command = new Command(() =>
+            //    {
+            //        Navigation.PopAsync();
+            //    })
+            //});
+
+            //var htmlSource = new HtmlWebViewSource();
+            //htmlSource.Html = @"<html><body>
+            //  <h1>Xamarin.Forms</h1>
+            //  <p>Welcome to WebView.</p>
+            //  </body></html>";
+            //Webview.Source = htmlSource;
+
         }
 
         async void OnButtonClickedAccept(object sender, EventArgs args)

@@ -213,7 +213,7 @@
 
                                 <Span x:Name="lblTermsAndCondition" 
                                       Text="Terms and Conditions." 
-                                      TextColor="Black" 
+                                      TextColor="Blue" 
                                       FontAttributes="Bold"
                                       TextDecorations="Underline"/>
                                 
