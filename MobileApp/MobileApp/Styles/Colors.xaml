@@ -2,11 +2,11 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <!-- Colours Light Theme -->
-    <Color x:Key="NavigationColor">#2c3e50</Color>
+    <Color x:Key="NavigationColor">DarkGreen</Color>
     
     <Color x:Key="TabTextColor">White</Color>
     <Color x:Key="TabSelectedTextColor">#3498db</Color>
-    <Color x:Key="TabBackgroundColor">#2c3e50</Color>
+    <Color x:Key="TabBackgroundColor">Green</Color>
 
     <Color x:Key="PrimaryColor"> #008000</Color>
     <Color x:Key="colorPrimaryDark"> Green </Color>
@@ -23,7 +23,7 @@
     <Color x:Key= "PickerBorderColor">#C9A959</Color>
 
     <Color x:Key= "TextColor">White</Color>
-    <Color x:Key= "FrameColor">#2c3e50</Color>
+    <Color x:Key= "FrameColor">DarkGreen</Color>
 
 
 </ResourceDictionary>

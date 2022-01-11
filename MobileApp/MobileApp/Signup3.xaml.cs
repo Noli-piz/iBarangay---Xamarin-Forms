@@ -624,12 +624,12 @@ namespace MobileApp
                 vldContactNo.IsVisible = true;
                 ErrorCount++;
             }
-            if (etCedulaNo.Text == "" || etCedulaNo.Text == null)
-            {
-                vldCedula.Text = "Cedula No. is required";
-                vldCedula.IsVisible = true;
-                ErrorCount++;
-            }
+            //if (etCedulaNo.Text == "" || etCedulaNo.Text == null)
+            //{
+            //    vldCedula.Text = "Cedula No. is required";
+            //    vldCedula.IsVisible = true;
+            //    ErrorCount++;
+            //}
             if (strCivil == "" || strCivil == null)
             {
                 vldCivilStatus.Text = "Civil Status is required";
@@ -691,6 +691,8 @@ namespace MobileApp
                     strFormerAddress = etFormerAddress.Text;
                     FileUrl = strFileUrl;
                 }
+
+                etCedulaNo.Text = "NONE";
 
                 //InsertInformation();
                 await Navigation.PushAsync(new ReviewInformation(strImageUrl, etFname.Text, etMname.Text, etLname.Text, etSname.Text, etBirthplace.Text,

@@ -554,7 +554,7 @@
 
             
             <!-- Cedula Field -->
-            <Grid>
+            <Grid IsVisible="false">
                 <Frame
                     BorderColor="{DynamicResource EntryBorderColor}"
                     CornerRadius="20"
@@ -598,7 +598,7 @@
 
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Are you resident of Brgy: Balangkas, Valenzuel City?" TextColor="Black" FontSize="18"/>
+                            <Span Text="Are you resident of Brgy: Balangkas, Valenzuela City for 6 months prior to registration? " TextColor="Black" FontSize="18"/>
 
                         </FormattedString>
                     </Label.FormattedText>

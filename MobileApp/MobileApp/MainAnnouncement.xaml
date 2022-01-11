@@ -16,7 +16,7 @@
                        HeightRequest="50"
                        WidthRequest="50"/>
 
-                <Label Text="Announcement"
+                <Label Text="Announcements"
                        VerticalOptions="Center" 
                        FontFamily="Segoe UI"
                        FontSize="25"

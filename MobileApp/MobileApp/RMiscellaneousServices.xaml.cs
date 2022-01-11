@@ -154,11 +154,12 @@ namespace MobileApp
 
             if(CountError <=0 )
             {
-                bool answer = await DisplayAlert("Confirm", "You are about to borrow  x" + intQuantity.ToString() + "  " + strItem 
+                bool answer = await DisplayAlert("", "You are about to borrow  x" + intQuantity.ToString() + "  " + strItem 
                     + " for the purpose of " + etPurpose.Text  + " on " + dtRentDate.Date.ToString("MMM dd, yyyy") +" until " + dtEndRentDate.Date.ToString("MMM dd, yyyy")
                     + ". \n\n Your request will be processed approximately 1-5 days."
-                    + "\n\nTake note that any broken or missing item shall be paid by the borrowee on the approved"
-                    + " date of return." , "Confirm", "Back");
+                    + "\n\nPlease take note that any broken or missing item shall be paid by the borrowee on the approved"
+                    + " date of return. Furthermore, failure to return any item(s) on or before the set deadline will be fined with" +
+                    " a 20 Php penalty for every borrowed item." , "Confirm", "Back");
 
                 if (answer == true)
                 {

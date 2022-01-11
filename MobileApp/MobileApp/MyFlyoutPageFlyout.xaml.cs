@@ -97,11 +97,11 @@ namespace MobileApp
             await Task.Delay(5000);
             if (name.getboolVerified() == true)
             {
-                lblVerificationStatus.Text = "Validated";
+                lblVerificationStatus.Text = "Verified";
             }
             else
             {
-                lblVerificationStatus.Text = "Not Validated";
+                lblVerificationStatus.Text = "Not yet verified";
             }
 
             if (ImgProfile == null)
@@ -125,11 +125,11 @@ namespace MobileApp
                 lblName.Text = name.getFirstName() +" "+ name.getMiddleName() +" "+ name.getLastName() +" "+ name.getSuffixName();
                 if (name.getboolVerified() == true)
                 {
-                    lblVerificationStatus.Text = "Validated";
+                    lblVerificationStatus.Text = "Verified";
                 }
                 else
                 {
-                    lblVerificationStatus.Text = "Not Validated";
+                    lblVerificationStatus.Text = "Not yet verified";
                 }
             }
 

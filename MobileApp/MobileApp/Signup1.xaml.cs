@@ -219,7 +219,7 @@ namespace MobileApp
                 {
                     if (cbAccept.IsChecked == false)
                     {
-                        await DisplayAlert("Terms and Conditions", "Please read and Agree to the Terms and Conditions.", "OK");
+                        await DisplayAlert("Terms and Conditions", "Please read and agree to the Terms and Conditions.", "OK");
                     }
                     else
                     {

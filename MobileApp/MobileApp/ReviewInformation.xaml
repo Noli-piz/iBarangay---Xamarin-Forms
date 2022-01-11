@@ -169,17 +169,17 @@
                        FontSize="15"
                        Margin="10,0,0,15"/>
 
-                <Label Text="Cedula No."
+                <Label Text="Cedula No." IsVisible="false"
                        TextColor="Gray"
                        FontSize="12"
                        Margin="10,0,0,0"/>
 
-                <Label x:Name="lblCedulaNo"
+                <Label x:Name="lblCedulaNo" IsVisible="false"
                        TextColor="Black"
                        FontSize="15"
                        Margin="10,0,0,15"/>
 
-                <Label Text="Contact No."
+                <Label Text="Contact No." 
                        TextColor="Gray"
                        FontSize="12"
                        Margin="10,0,0,0"/>

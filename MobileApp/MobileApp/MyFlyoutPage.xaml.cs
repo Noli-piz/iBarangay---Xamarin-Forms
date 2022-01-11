@@ -59,7 +59,7 @@ namespace MobileApp
                 }
                 else if(item.Title != "Announcement")
                 {
-                    bool answer = await DisplayAlert("Not Verified", "Unable to access because you are still not Verified",  "GET VERIFIED", "DO IT LATER");
+                    bool answer = await DisplayAlert("Not yet verified", "Please verify your account to be able to access full features of iBarangay",  "GET VERIFIED", "DO IT LATER");
                     if (answer == true)
                     {
                         await Navigation.PushAsync(new Validation1());
